@@ -13,16 +13,24 @@
         android:theme="@style/Theme.AssigmentOne">
         <activity
             android:name=".EditTask"
-            android:exported="false" />
+            android:exported="false"
+            android:configChanges="orientation|screenSize"
+            />
         <activity
             android:name=".TaskDetails"
-            android:exported="false" />
+            android:exported="false"
+            android:configChanges="orientation|screenSize"
+            />
         <activity
             android:name=".AddTask"
-            android:exported="false" />
+            android:exported="false"
+            android:configChanges="orientation|screenSize"
+            />
         <activity
             android:name=".MainActivity"
-            android:exported="true">
+            android:exported="true"
+            android:configChanges="orientation|screenSize"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -106,4 +106,37 @@ public class EditTask extends AppCompatActivity {
 
         datePickerDialog.show();
     }
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+
+        EditText etTitle = findViewById(R.id.etTitle);
+        EditText etDescription = findViewById(R.id.etDescription);
+        TextView tvSelectedDate = findViewById(R.id.tvSelectedDate);
+        RadioGroup rgPriority = findViewById(R.id.rgPriority);
+        CheckBox checkState = findViewById(R.id.checkState);
+
+        outState.putString("title", etTitle.getText().toString());
+        outState.putString("desc", etDescription.getText().toString());
+        outState.putString("date", tvSelectedDate.getText().toString());
+        outState.putInt("priority", rgPriority.getCheckedRadioButtonId());
+        outState.putBoolean("state", checkState.isChecked());
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+
+        EditText etTitle = findViewById(R.id.etTitle);
+        EditText etDescription = findViewById(R.id.etDescription);
+        TextView tvSelectedDate = findViewById(R.id.tvSelectedDate);
+        RadioGroup rgPriority = findViewById(R.id.rgPriority);
+        CheckBox checkState = findViewById(R.id.checkState);
+
+        etTitle.setText(savedInstanceState.getString("title"));
+        etDescription.setText(savedInstanceState.getString("desc"));
+        tvSelectedDate.setText(savedInstanceState.getString("date"));
+        rgPriority.check(savedInstanceState.getInt("priority"));
+        checkState.setChecked(savedInstanceState.getBoolean("state"));
+    }
 }
