@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView android:id="@+id/card_view"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:layout_marginLeft="20dp"
+    android:layout_marginRight="20dp"
+    android:layout_marginTop="20dp"
+    android:layout_marginBottom="20dp"
+    app:cardCornerRadius="10dp"
+    android:outlineSpotShadowColor="@color/black"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <ImageView
+            android:id="@+id/imgIcon"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:background="@drawable/bg_icon_circle"
+            android:clipToOutline="true"
+            android:scaleType="centerCrop"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+
+        <LinearLayout
+            android:id="@+id/textContainer"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="12dp"
+            app:layout_constraintStart_toEndOf="@id/imgIcon"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/doneContainer">
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pack Luggage"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#222222" />
+
+            <TextView
+                android:id="@+id/tvDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Date: 20 Nov 2025"
+                android:textSize="14sp"
+                android:textColor="#666666"
+                android:layout_marginTop="2dp" />
+
+            <TextView
+                android:id="@+id/tvPriority"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Priority: Low"
+                android:textSize="14sp"
+                android:textColor="#666666"
+                android:layout_marginTop="2dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/doneContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <CheckBox
+                android:id="@+id/checkDone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/tvDoneStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Done"
+                android:layout_marginStart="4dp"
+                android:textSize="14sp"
+                android:textColor="#333333"/>
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
